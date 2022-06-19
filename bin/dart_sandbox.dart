@@ -9,6 +9,9 @@ import "Dart:io";
 // 関数
 // アロー関数
 // コールバック関数/無名関数
+// 演算子(Javaとほとんど変わらないので省略)
+// 条件分岐(Javaとほとんど変わらないので省略)
+// ループ処理(Javaとほとんど変わらないので省略)
 
 void main(List<String> arguments) {
   // print関数
