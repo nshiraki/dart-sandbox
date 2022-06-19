@@ -8,6 +8,7 @@ import "Dart:io";
 // 定数
 // 関数
 // アロー関数
+// コールバック関数/無名関数
 
 void main(List<String> arguments) {
   // print関数
@@ -83,6 +84,9 @@ void main(List<String> arguments) {
 
   // アロー関数
   arrowFunction();
+
+  // コールバック関数/無名関数
+  callbackFunction();
 }
 
 //////////////////////////////////
@@ -145,3 +149,32 @@ int add({int num1 = 0, int num2 = 0}) => num1 + num2;
 
 // 引数で渡された数値を表示
 void showIntValue({int value = 0}) => print('showIntValue: value= $value');
+
+//////////////////////////////////
+// コールバック関数/無名関数
+
+void callbackFunction() {
+  // コールバック引数なし(処理が一つ以上)
+  final callbackNotArgs1 = () {
+      stdout.writeln("callbackNotArgs1 invoked");
+  };
+  // コールバック引数なし(処理が一つのみ)
+  final callbackNotArgs2 = () => stdout.writeln("callbackNotArgs2 invoked");
+
+
+  // コールバックの実行(引数なし)
+  callbackNotArgs1();
+  callbackNotArgs2.call();
+
+  // コールバック引数あり(処理が一つ以上)
+  // コールバック引数なし(処理が一つ以上)
+  final callbackWithArgs1 = (int a, int b) {
+    stdout.writeln("callbackWithArgs1: a=$a, b=$b");
+  };
+  // コールバック引数なし(処理が一つのみ)
+  final callbackWithArgs2 = (int a, int b) => stdout.writeln("callbackWithArgs1: a=$a, b=$b");
+
+  // コールバックの実行(引数あり)
+  callbackWithArgs1(2,3);
+  callbackWithArgs2.call(3,4);
+}
